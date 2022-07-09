@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  padding: 2rem 2rem 4.625rem 2rem;
+  width: 100%;
+}
+
+.header a {
+  padding: 1rem 2rem;
+}
