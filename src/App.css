@@ -7,6 +7,7 @@
 body {
   margin: 0px;
   color: #333;
+  text-decoration: none;
   --type-first: "Poppins", sans-serif;
   --type-second: "IBM Plex Sans", sans-serif;
   font-family: var(--type-first);
