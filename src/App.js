@@ -7,15 +7,15 @@ import "./App.css";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [data, setData] = useState(true);
-  let location = useLocation();
+  const [styles, setStyles] = useState(true);
+  const location = useLocation().pathname;
+
   useEffect(() => {
-    if (location !== "/") setData(false);
-    else setData(true);
-  }, [data, location]);
+    if (location !== "/") setStyles(false);
+  }, [location, styles]);
 
   return (
-    <div className={data ? "internal" : "main"}>
+    <div className={styles ? "main" : "internal"}>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
