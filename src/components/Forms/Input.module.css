@@ -1,0 +1,50 @@
+.wrapper {
+  margin-bottom: 1rem;
+}
+
+.input {
+  border: 1px solid #eee;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  display: block;
+  min-width: 310px;
+  max-width: 410px;
+  height: 40px;
+  font-size: 1rem;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  background: #f7f7f7;
+  transition: 0.2s;
+  text-align: center;
+  color: #bcbcbc;
+  font-size: 12px;
+}
+
+.input:focus,
+.input:hover {
+  outline: none;
+  border-color: #737380;
+  background: white;
+  color: #737380;
+  box-shadow: 0 0 0 3px #d2d2f1;
+}
+
+.input[name="password"],
+.input[name="confirme"] {
+  background-image: url("../../Assets/eye.png");
+  background-repeat: no-repeat;
+  background-position: 95%;
+}
+
+.label {
+  display: block;
+  font-size: 1rem;
+  line-height: 1;
+  padding-bottom: 0.5rem;
+  color: #737380;
+}
+
+.error {
+  color: #f31;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}

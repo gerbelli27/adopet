@@ -50,6 +50,41 @@ img {
   margin: 0rem 0 1.8rem 0;
 }
 
+.title.pages {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 1.625rem;
+  color: #3772ff;
+  margin: 1.8rem 0;
+}
+
+.subtitle.pages {
+  font-family: var(--type-first);
+  font-weight: 400;
+  line-height: 1.3;
+  font-size: 1rem;
+  color: #3772ff;
+  margin: 0.5rem 0 0 0;
+}
+
+.link {
+  margin: 0 auto 1rem;
+  display: block;
+  background-color: #fc7071;
+  color: #ffffff;
+  border: 1px solid #fc7071;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border-radius: 4px;
+  height: 2.5rem;
+  min-width: 12rem;
+  padding: 0.5rem 0;
+  font-family: var(--type-first);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
 .animeLeft {
   opacity: 0;
   transform: translateX(-20px);
@@ -77,8 +112,8 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url("./Assets/bg_header.png"), url("./Assets/Forma2.png");
+  background: url("./Assets/bg_header.png"), url("./Assets/Forma2left.png");
   background-repeat: no-repeat;
-  background-position: top left, right center;
+  background-position: top left, left top 370px;
   background-color: #fff;
 }

@@ -1,0 +1,22 @@
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 6.25rem;
+}
+
+.register form {
+  margin-top: 2rem;
+}
+
+.register button {
+  margin-top: 0.5rem;
+}
+
+.logoblue {
+  display: inline-block;
+  margin-bottom: 1rem;
+}

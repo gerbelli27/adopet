@@ -5,5 +5,18 @@
 }
 
 .header a {
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
+  margin-right: 1.6rem;
+}
+
+.patas {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.user {
+  position: absolute;
+  top: 40px;
+  right: 40px;
 }
