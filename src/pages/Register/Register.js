@@ -1,5 +1,5 @@
 import styles from "./Register.module.css";
-import LogoBlue from "../../Assets/Logoblue.png";
+import LogoBlue from "../../Assets/Logoblue.svg";
 import Input from "../../components/Forms/Input";
 import Button from "../../components/Forms/Button";
 
@@ -12,10 +12,11 @@ const Register = () => {
     <>
       <section className={`${styles.register} animeLeft`}>
         <img className={styles.logoblue} src={LogoBlue} alt="Logo Adopet" />
-        <h1 className="subtitle pages">Ainda não tem cadastro?</h1>
-        <p className="subtitle pages">
+        <h1 className={styles.subtitle}>
+          Ainda não tem cadastro?
+          <br />
           Então, antes de buscar seu melhor amigo, precisamos de alguns dados:
-        </p>
+        </h1>
         <form onSubmit={handleSubmit}>
           <Input
             label="Email"
@@ -26,7 +27,7 @@ const Register = () => {
           <Input
             label="Nome"
             type="text"
-            name="email"
+            name="name"
             placeholder="Digite seu nome completo"
           />
           <Input

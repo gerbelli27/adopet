@@ -9,10 +9,12 @@ const Input = ({
   error,
   onBlur,
   placeholder,
+  style,
+  colorLabel,
 }) => {
   return (
     <div className={styles.wrapper}>
-      <label htmlFor={name} className={styles.label}>
+      <label htmlFor={name} className={styles.label} style={colorLabel}>
         {label}
       </label>
       <input
@@ -24,6 +26,7 @@ const Input = ({
         onChange={onChange}
         onBlur={onBlur}
         placeholder={placeholder}
+        style={style}
       />
       {error && <p className={styles.error}>{error}</p>}
     </div>

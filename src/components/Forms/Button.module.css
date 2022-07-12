@@ -1,11 +1,11 @@
 .button {
-  margin: 0 auto 1rem;
+  margin: 0.2rem 0.2rem;
   display: block;
   background-color: #fc7071;
   color: #ffffff;
   border: 1px solid #fc7071;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    rgba(0, 0, 0, 0.4) 0px 1px 2px 0px;
   border-radius: 4px;
   height: 2.5rem;
   min-width: 9.25rem;
@@ -15,4 +15,9 @@
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
+}
+
+.button:hover {
+  background-color: #ff9d9e;
+  transition: 0.4s;
 }

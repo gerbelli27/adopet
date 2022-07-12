@@ -3,9 +3,19 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 90%;
+  width: 75%;
   margin: 0 auto;
   margin-bottom: 6.25rem;
+  height: 100vh;
+}
+
+.subtitle {
+  font-family: var(--type-first);
+  font-weight: 400;
+  line-height: 1.3;
+  font-size: 1rem;
+  color: #3772ff;
+  margin: 0.5rem 0 0 0;
 }
 
 .register form {
@@ -19,4 +29,32 @@
 .logoblue {
   display: inline-block;
   margin-bottom: 1rem;
+  width: 143px;
+}
+
+@media (min-width: 768px) {
+  .register {
+    margin-top: 6rem;
+  }
+
+  .logoblue {
+    margin-bottom: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .register {
+    margin-top: 0;
+  }
+  .logoblue {
+    width: 259px;
+  }
+
+  input {
+    width: 700px;
+  }
 }
