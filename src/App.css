@@ -107,12 +107,12 @@ img {
     background: url("./Assets/Forma1.svg"), url("./Assets/Forma2.svg");
     background-repeat: no-repeat;
     background-size: 560px, 130px;
-    background-position: top left, right 0px top 280px;
+    background-position: top left, right 0px top 270px;
   }
 
   .main {
     background-size: 560px, 130px;
-    background-position: top left, right 0px top 280px;
+    background-position: top left, right 0px top 270px;
     background-color: #3772ff;
   }
 }

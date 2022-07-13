@@ -13,7 +13,7 @@ const Input = ({
   colorLabel,
 }) => {
   return (
-    <div className={styles.wrapper}>
+    <>
       <label htmlFor={name} className={styles.label} style={colorLabel}>
         {label}
       </label>
@@ -29,7 +29,7 @@ const Input = ({
         style={style}
       />
       {error && <p className={styles.error}>{error}</p>}
-    </div>
+    </>
   );
 };
 export default Input;
