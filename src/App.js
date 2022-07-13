@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home/Home";
@@ -6,8 +7,8 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Message from "./pages/Message/Message";
 import Feed from "./pages/Feed/Feed";
+import Profile from "./pages/Profile/Profile";
 import "./App.css";
-import { useEffect, useState } from "react";
 
 function App() {
   const [styles, setStyles] = useState(false);
@@ -35,6 +36,7 @@ function App() {
         <Route path="/login/lista" element={<Feed />} />
         <Route path="/cadastro" element={<Register />} />
         <Route path="/login/mensagem" element={<Message />} />
+        <Route path="/login/profile" element={<Profile />} />
       </Routes>
       <Footer />
     </div>

@@ -1,4 +1,4 @@
-.message {
+.profile {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,7 +57,7 @@ textarea:hover {
 }
 
 @media (min-width: 768px) {
-  .message {
+  .profile {
     margin-top: 7rem;
   }
 
@@ -74,7 +74,7 @@ textarea:hover {
 }
 
 @media (min-width: 1440px) {
-  .message {
+  .profile {
     margin-top: 4rem;
     margin-bottom: 6rem;
     background: url("../../Assets/Forma2.svg");
