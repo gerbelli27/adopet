@@ -2,6 +2,8 @@ import styles from "./Login.module.css";
 import LogoBlue from "../../Assets/Logoblue.svg";
 import Input from "../../components/Forms/Input";
 import Button from "../../components/Forms/Button";
+import { Link } from "react-router-dom";
+
 const Login = () => {
   function handleSubmit(event) {
     console.log(event);
@@ -20,12 +22,13 @@ const Login = () => {
         />
         <Input
           label="Senha"
+          id="pwd"
           type="password"
           name="password"
           placeholder="Insira sua senha"
         />
       </form>
-      <p>Esqueci minha senha</p>
+      <Link to="/">Esqueci minha senha</Link>
       <Button>Entrar</Button>
     </section>
   );

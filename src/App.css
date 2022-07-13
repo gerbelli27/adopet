@@ -103,6 +103,10 @@ img {
 /* Above is defined the general styles for each page based on url pathname */
 
 @media (min-width: 768px) {
+  .login {
+    background-size: 560px;
+  }
+
   .internal {
     background: url("./Assets/Forma1.svg"), url("./Assets/Forma2.svg");
     background-repeat: no-repeat;

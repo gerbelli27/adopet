@@ -26,7 +26,7 @@ const Message = () => {
           <Input
             label="Telefone"
             colorLabel={{ color: "#3772FF", fontWeight: "600" }}
-            type="number"
+            type="tel"
             name="phone"
             placeholder="Insira seu telefone e/ou whatsapp"
             style={{ background: "#FFFFFF" }}

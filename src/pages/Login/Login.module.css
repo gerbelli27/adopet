@@ -8,6 +8,13 @@
   height: 90vh;
 }
 
+.login form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .subtitle {
   display: block;
   font-family: var(--type-first);
@@ -24,11 +31,12 @@
   width: 143px;
 }
 
-.login p {
+.login a {
   font-size: 0.8rem;
   text-decoration-line: underline;
   color: #fc7071;
   margin-bottom: 1.5rem;
+  text-decoration: none;
 }
 
 @media (min-width: 768px) {
@@ -44,10 +52,6 @@
   .subtitle {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
-  }
-
-  input {
-    width: 21.5rem;
   }
 }
 

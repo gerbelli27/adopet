@@ -3,6 +3,7 @@
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
   display: block;
   min-width: 19.375rem;
+  width: 100%;
   max-width: 34.5rem;
   height: 40px;
   font-size: 0.9rem;
@@ -26,16 +27,16 @@
 
 .input[name="password"],
 .input[name="confirme"] {
-  background-image: url("../../Assets/eye.png");
+  background-image: url("../../Assets/eye.svg");
   background-repeat: no-repeat;
   background-position: 95%;
 }
 
 .label {
-  display: block;
+  display: inline-block;
   font-size: 1rem;
   line-height: 1;
-  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
   color: #737380;
 }
 
@@ -43,4 +44,10 @@
   color: #f31;
   font-size: 0.875rem;
   margin-top: 0.25rem;
+}
+
+@media (min-width: 1440px) {
+  .input[id="pwd"] {
+    width: 22.625rem;
+  }
 }

@@ -9,12 +9,6 @@
   height: 100vh;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .subtitle {
   font-family: var(--type-first);
   font-weight: 400;
@@ -26,6 +20,11 @@ form {
 
 .register form {
   margin-top: 2rem;
+  width: 100%;
+  max-width: 21.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .register button {
@@ -56,12 +55,14 @@ form {
 @media (min-width: 1440px) {
   .register {
     margin-top: 0;
+    width: 34.5rem;
   }
+
   .logoblue {
     width: 259px;
   }
 
-  input:nth-child(-n + 4) {
-    width: 34rem;
+  .register form {
+    max-width: 34.15rem;
   }
 }

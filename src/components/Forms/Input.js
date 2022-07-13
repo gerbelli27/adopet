@@ -11,6 +11,7 @@ const Input = ({
   placeholder,
   style,
   colorLabel,
+  id,
 }) => {
   return (
     <>
@@ -18,7 +19,7 @@ const Input = ({
         {label}
       </label>
       <input
-        id={name}
+        id={id || name}
         name={name}
         className={styles.input}
         type={type}

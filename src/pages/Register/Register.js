@@ -19,24 +19,28 @@ const Register = () => {
       <form onSubmit={handleSubmit}>
         <Input
           label="Email"
+          id="email"
           type="email"
           name="email"
           placeholder="Escolha seu melhor email"
         />
         <Input
           label="Nome"
+          id="name"
           type="text"
           name="name"
           placeholder="Digite seu nome completo"
         />
         <Input
           label="Senha"
+          id="pwd"
           type="password"
           name="password"
           placeholder="Crie uma senha"
         />
         <Input
           label="Confirme sua senha"
+          id="pwd"
           type="password"
           name="confirme"
           placeholder="Repita a senha criada acima"
