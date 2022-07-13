@@ -4,7 +4,7 @@
   display: block;
   min-width: 19.375rem;
   width: 100%;
-  max-width: 34.5rem;
+  max-width: 21.5rem;
   height: 40px;
   font-size: 0.9rem;
   padding: 0.8rem;
@@ -47,6 +47,10 @@
 }
 
 @media (min-width: 1440px) {
+  .input {
+    max-width: 34.5rem;
+  }
+
   .input[id="pwd"] {
     width: 22.625rem;
   }
