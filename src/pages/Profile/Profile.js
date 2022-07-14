@@ -1,6 +1,7 @@
 import styles from "./Profile.module.css";
 import Input from "../../components/Forms/Input";
 import Button from "../../components/Forms/Button";
+import Provisoria from "../../Assets/images/perfil.jpg";
 
 const Profile = () => {
   function handleSubmit(event) {
@@ -14,7 +15,22 @@ const Profile = () => {
         mensagem.
       </h1>
       <div className={styles.wrapper}>
-        <form onSubmit={handleSubmit}>
+        <h2 className={styles.title}>Perfil</h2>
+        <p className={styles.labelphoto}>Foto</p>
+
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <img className={styles.picture} src={Provisoria} alt="Foto perfil" />{" "}
+          <Input
+            label="Clique na foto para editar"
+            colorLabel={{
+              color: "#fc7071",
+              fontWeight: "400",
+              fontSize: "0.75rem",
+            }}
+            type="file"
+            name="foto"
+            style={{ background: "#FFFFFF" }}
+          />
           <Input
             label="Nome"
             colorLabel={{ color: "#3772FF", fontWeight: "600" }}
@@ -42,7 +58,12 @@ const Profile = () => {
           >
             Sobre
           </label>
-          <textarea name="about" cols="30" rows="10"></textarea>
+          <textarea
+            className={styles.about}
+            name="about"
+            cols="30"
+            rows="10"
+          ></textarea>
         </form>
         <Button>Salvar</Button>
       </div>

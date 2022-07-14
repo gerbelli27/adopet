@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Logo from "../Assets/Logo.svg";
 
 const Header = () => {
-  const user = true; // trocar condicao com usuario logado
+  const user = false; // trocar condicao com usuario logado
 
   return (
     <header className={styles.header}>

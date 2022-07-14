@@ -8,11 +8,18 @@
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
   margin-top: 1.5rem;
   background: #f6f6f6;
   padding: 2rem 1rem;
   border-radius: 10px;
   max-width: 21.875rem;
+}
+
+.wrapper button {
+  align-self: center;
+  width: 5.125rem;
 }
 
 .subtitle {
@@ -26,13 +33,12 @@
   width: 230px;
 }
 
-textarea {
+.msg {
   border: 1px solid #eee;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
   display: block;
   min-width: 19.375rem;
   width: 100%;
-  max-width: 34.5rem;
   font-family: var(--type-first);
   height: 170px;
   font-size: 0.9rem;
@@ -40,15 +46,15 @@ textarea {
   border-radius: 0.4rem;
   background: #ffffff;
   transition: 0.2s;
-  text-align: center;
+  text-align: left;
   color: #bcbcbc;
   margin-top: 0.5rem;
   margin-bottom: 2rem;
   resize: none;
 }
 
-textarea:focus,
-textarea:hover {
+.msg:focus,
+.msg:hover {
   outline: none;
   border-color: #737380;
   background: white;
@@ -85,12 +91,5 @@ textarea:hover {
 
   .wrapper {
     padding: 2rem 1.875rem;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .wrapper button {
-    align-self: center;
-    width: 5.125rem;
   }
 }

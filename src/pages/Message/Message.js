@@ -46,6 +46,7 @@ const Message = () => {
             Mensagem
           </label>
           <textarea
+            className={styles.msg}
             name="message"
             cols="30"
             rows="10"
