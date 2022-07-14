@@ -14,10 +14,20 @@
 }
 
 .patas {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: animeRight 0.3s forwards;
   position: absolute;
   width: 189px;
   top: 0px;
   right: 0px;
+}
+
+@keyframes animeRight {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
 }
 
 .user {

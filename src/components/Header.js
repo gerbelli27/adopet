@@ -32,8 +32,8 @@ const Header = () => {
               <img src={UserAvatar} alt="user.nome" />
             </div>
           ) : (
-            <div className={styles.patas}>
-              <img className="patas" src={patas} alt="Ilustracao Patas" />
+            <div className={`${styles.patas} anime`}>
+              <img src={patas} alt="Ilustracao Patas" />
             </div>
           )}
         </div>
