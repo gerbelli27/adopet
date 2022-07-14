@@ -33,7 +33,8 @@
 .ilustrationHome {
   position: relative;
   left: -25px;
-  background: url("../../Assets/ilustration_home.png");
+  bottom: -25px;
+  background: url("../../Assets/ilustracao1.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom;

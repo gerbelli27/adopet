@@ -10,7 +10,7 @@ const Header = () => {
   let location = window.location.pathname;
   console.log(location);
 
-  const user = false; // trocar condicao com usuario logado
+  const user = true; // trocar condicao com usuario logado
 
   return (
     <header className={styles.header}>
@@ -29,7 +29,7 @@ const Header = () => {
         <div>
           {user ? (
             <div className={styles.user}>
-              <Link to="/login">
+              <Link to="/login/perfil">
                 <img src={UserAvatar} alt="user.nome" />
               </Link>
             </div>

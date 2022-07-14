@@ -4,4 +4,5 @@
   display: grid;
   place-items: center;
   color: #ffffff;
+  z-index: 100;
 }

@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     if (location === "/") setStyles(true);
     else setStyles(false);
-  }, [location, styles, styles2]);
+  }, [location, styles]);
 
   useEffect(() => {
     if (location !== "/login/") setStyles2(true);
