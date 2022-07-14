@@ -1,12 +1,15 @@
 import styles from "./Header.module.css";
 import iconHome from "../Assets/Casa.svg";
 import iconContact from "../Assets/Mensagens.svg";
-import patas from "../Assets/Patas.png";
+import patas from "../Assets/patas.svg";
 import UserAvatar from "../Assets/Usuario.png";
 import { Link } from "react-router-dom";
 import Logo from "../Assets/Logo.svg";
 
 const Header = () => {
+  let location = window.location.pathname;
+  console.log(location);
+
   const user = false; // trocar condicao com usuario logado
 
   return (
@@ -19,13 +22,20 @@ const Header = () => {
         <img src={iconContact} alt="Ir para mensagens" />
       </Link>
       <div className={styles.user}></div>
-      {user ? (
-        <div className={styles.user}>
-          <img src={UserAvatar} alt="user.nome" />
-        </div>
+
+      {location === "/" ? (
+        <div></div>
       ) : (
-        <div className={styles.patas}>
-          <img className="patas" src={patas} alt="Ilustracao Patas" />
+        <div>
+          {user ? (
+            <div className={styles.user}>
+              <img src={UserAvatar} alt="user.nome" />
+            </div>
+          ) : (
+            <div className={styles.patas}>
+              <img className="patas" src={patas} alt="Ilustracao Patas" />
+            </div>
+          )}
         </div>
       )}
     </header>

@@ -36,7 +36,7 @@ function App() {
         <Route path="/login/lista" element={<Feed />} />
         <Route path="/cadastro" element={<Register />} />
         <Route path="/login/mensagem" element={<Message />} />
-        <Route path="/login/profile" element={<Profile />} />
+        <Route path="/login/perfil" element={<Profile />} />
       </Routes>
       <Footer />
     </div>
