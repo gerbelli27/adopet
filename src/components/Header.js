@@ -15,10 +15,10 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <img className={styles.logo} src={Logo} alt="Logo" />
-      <Link to="/">
+      <Link to="/" className={styles.link}>
         <img src={iconHome} alt="Ir para Homepage" />
       </Link>
-      <Link to="/login/mensagem">
+      <Link to="/login/mensagem" className={styles.link}>
         <img src={iconContact} alt="Ir para mensagens" />
       </Link>
       <div className={styles.user}></div>
@@ -29,7 +29,9 @@ const Header = () => {
         <div>
           {user ? (
             <div className={styles.user}>
-              <img src={UserAvatar} alt="user.nome" />
+              <Link to="/login">
+                <img src={UserAvatar} alt="user.nome" />
+              </Link>
             </div>
           ) : (
             <div className={`${styles.patas} anime`}>
