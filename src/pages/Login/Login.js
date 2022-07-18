@@ -1,35 +1,22 @@
+import { Routes, Route, Navigate } from "react-router-dom";
+import LoginForm from "./LoginForm";
+import NotFound from "../../components/NotFound";
+import { useContext } from "react";
+import { UserContext } from "../../UserContext";
 import styles from "./Login.module.css";
-import LogoBlue from "../../Assets/Logoblue.svg";
-import Input from "../../components/Forms/Input";
-import Button from "../../components/Forms/Button";
-import { Link } from "react-router-dom";
 
 const Login = () => {
-  function handleSubmit(event) {
-    console.log(event);
-  }
+  const { login } = useContext(UserContext);
 
+  if (login === true) return <Navigate to="/login/lista" />;
   return (
     <section className={`${styles.login} animeLeft`}>
-      <img className={styles.logoblue} src={LogoBlue} alt="Logo Adopet" />
-      <h1 className={styles.subtitle}>Já tem conta? Faça seu login:</h1>
-      <form onSubmit={handleSubmit}>
-        <Input
-          label="Email"
-          type="email"
-          name="email"
-          placeholder="Insira seu email"
-        />
-        <Input
-          label="Senha"
-          id="pwd"
-          type="password"
-          name="password"
-          placeholder="Insira sua senha"
-        />
-      </form>
-      <Link to="/">Esqueci minha senha</Link>
-      <Button>Entrar</Button>
+      <Routes>
+        <Route path="/" element={<LoginForm />} />
+        {/* <Route path="lost" element={<LoginPasswordLost />} /> */}
+        {/* <Route path="reset" element={<LoginPasswordReset />} /> */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </section>
   );
 };

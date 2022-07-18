@@ -57,7 +57,8 @@
     max-width: 34.5rem;
   }
 
-  .input[id="pwd"] {
+  .input[name="password"],
+  .input[name="confirme"] {
     width: 22.625rem;
   }
 }

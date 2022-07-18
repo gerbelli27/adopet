@@ -1,11 +1,37 @@
 import styles from "./Register.module.css";
-import LogoBlue from "../../Assets/Logoblue.svg";
 import Input from "../../components/Forms/Input";
 import Button from "../../components/Forms/Button";
+import LogoBlue from "../../Assets/Logoblue.svg";
+import Error from "../../components/Helper/Error";
+import useForm from "../../Hooks/useForm";
+import { useContext, useState } from "react";
+import useFetch from "../../Hooks/useFetch";
+import { UserContext } from "../../UserContext";
+import { USER_POST } from "../../api";
 
 const Register = () => {
-  function handleSubmit(event) {
-    console.log(event);
+  const username = useForm();
+  const email = useForm("email");
+  const password = useForm("password");
+  const password2 = useForm("password");
+  const [check, setCheck] = useState(false);
+
+  const { userLogin } = useContext(UserContext);
+  const { loading, error, request } = useFetch();
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    if (password.value === password2.value) {
+      const { url, options } = USER_POST({
+        username: username.value,
+        email: email.value,
+        password: password.value,
+      });
+      const { response } = await request(url, options);
+      if (response.ok) userLogin(username.value, password.value);
+    } else {
+      setCheck(true);
+    }
   }
 
   return (
@@ -23,6 +49,7 @@ const Register = () => {
           type="email"
           name="email"
           placeholder="Escolha seu melhor email"
+          {...email}
         />
         <Input
           label="Nome"
@@ -30,6 +57,7 @@ const Register = () => {
           type="text"
           name="name"
           placeholder="Digite seu nome completo"
+          {...username}
         />
         <Input
           label="Senha"
@@ -37,16 +65,24 @@ const Register = () => {
           type="password"
           name="password"
           placeholder="Crie uma senha"
+          {...password}
         />
         <Input
           label="Confirme sua senha"
-          id="pwd"
+          id="pwd2"
           type="password"
-          name="confirme"
+          name="password"
           placeholder="Repita a senha criada acima"
+          {...password2}
         />
+        {loading ? (
+          <Button disabled>Cadastrando...</Button>
+        ) : (
+          <Button>Cadastrar</Button>
+        )}
+        <Error error={error} />
+        {check ? <Error error="Confirme sua senha" /> : <p></p>}
       </form>
-      <Button>Cadastrar</Button>
     </section>
   );
 };

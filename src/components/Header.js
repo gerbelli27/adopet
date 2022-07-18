@@ -5,17 +5,19 @@ import patas from "../Assets/patas.svg";
 import UserAvatar from "../Assets/Usuario.png";
 import { Link } from "react-router-dom";
 import Logo from "../Assets/Logo.svg";
+import { useContext } from "react";
+import { UserContext } from "../UserContext";
 
 const Header = () => {
+  const { data } = useContext(UserContext);
   let location = window.location.pathname;
-  console.log(location);
-
-  const user = true; // trocar condicao com usuario logado
 
   return (
     <header className={styles.header}>
-      <img className={styles.logo} src={Logo} alt="Logo" />
-      <Link to="/" className={styles.link}>
+      <Link to="/" className={styles.logo}>
+        <img src={Logo} alt="Logo" />
+      </Link>
+      <Link to="/login/lista" className={styles.link}>
         <img src={iconHome} alt="Ir para Homepage" />
       </Link>
       <Link to="/login/mensagem" className={styles.link}>
@@ -27,10 +29,10 @@ const Header = () => {
         <div></div>
       ) : (
         <div>
-          {user ? (
+          {data ? (
             <div className={styles.user}>
               <Link to="/login/perfil">
-                <img src={UserAvatar} alt="user.nome" />
+                <img src={UserAvatar} alt="Usuario Avatar" />
               </Link>
             </div>
           ) : (
