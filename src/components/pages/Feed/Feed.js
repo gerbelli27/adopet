@@ -1,5 +1,5 @@
 import styles from "./Feed.module.css";
-import image from "../../Assets/images/Image1.png";
+import image from "../../../Assets/images/Image1.png";
 import { Link } from "react-router-dom";
 
 const Home = () => {

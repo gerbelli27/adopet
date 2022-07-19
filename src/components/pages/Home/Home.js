@@ -1,5 +1,5 @@
 import styles from "./Home.module.css";
-import logo from "../../Assets/Logo.svg";
+import logo from "../../../Assets/Logo.svg";
 import { Link } from "react-router-dom";
 
 const Home = () => {

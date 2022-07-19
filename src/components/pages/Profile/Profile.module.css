@@ -1,10 +1,15 @@
-.message {
+.profile {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   min-height: 90vh;
   margin: 1rem auto;
+}
+
+.wrapper button {
+  align-self: center;
+  width: 5.125rem;
 }
 
 .wrapper {
@@ -17,9 +22,48 @@
   max-width: 21.875rem;
 }
 
-.wrapper button {
+.title {
+  display: block;
   align-self: center;
-  width: 5.125rem;
+  font-weight: 600;
+  font-size: 1.3125rem;
+  color: #737380;
+  margin-bottom: 1rem;
+}
+
+.labelphoto {
+  font-size: 1rem;
+  color: #3772ff;
+  font-weight: 600;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label[for="img"] {
+  position: relative;
+  top: -85px;
+  display: block;
+  align-self: center;
+  padding-top: 85px;
+  margin-bottom: -70px;
+  cursor: pointer;
+}
+
+.picture {
+  align-self: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  background-image: url("../../../Assets/avatar.svg");
+  background-size: cover;
 }
 
 .subtitle {
@@ -33,7 +77,7 @@
   width: 230px;
 }
 
-.msg {
+.about {
   border: 1px solid #eee;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
   display: block;
@@ -53,8 +97,8 @@
   resize: none;
 }
 
-.msg:focus,
-.msg:hover {
+.about:focus,
+.about:hover {
   outline: none;
   border-color: #737380;
   background: white;
@@ -63,7 +107,7 @@
 }
 
 @media (min-width: 768px) {
-  .message {
+  .profile {
     margin-top: 7rem;
   }
 
@@ -80,10 +124,10 @@
 }
 
 @media (min-width: 1440px) {
-  .message {
+  .profile {
     margin-top: 4rem;
     margin-bottom: 6rem;
-    background: url("../../Assets/Forma2.svg");
+    background: url("../../../Assets/Forma2.svg");
     background-repeat: no-repeat;
     background-size: 134px;
     background-position: right top;

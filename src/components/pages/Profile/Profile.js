@@ -1,9 +1,9 @@
 import styles from "./Profile.module.css";
-import Input from "../../components/Forms/Input";
-import Button from "../../components/Forms/Button";
+import Input from "../../../components/Forms/Input";
+import Button from "../../../components/Forms/Button";
 import { useState } from "react";
 import { useContext } from "react";
-import { UserContext } from "../../UserContext";
+import { UserContext } from "../../../UserContext";
 
 const Profile = () => {
   const { data } = useContext(UserContext);
