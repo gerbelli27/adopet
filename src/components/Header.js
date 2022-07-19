@@ -11,7 +11,6 @@ import { UserContext } from "../UserContext";
 const Header = () => {
   const { data } = useContext(UserContext);
   let location = window.location.pathname;
-
   return (
     <header className={styles.header}>
       <Link to="/" className={styles.logo}>
@@ -32,7 +31,10 @@ const Header = () => {
           {data ? (
             <div className={styles.user}>
               <Link to="/login/perfil">
-                <img src={UserAvatar} alt="Usuario Avatar" />
+                <div
+                  className={styles.avatar}
+                  style={{ backgroundImage: `url('${data.url}')` }}
+                ></div>
               </Link>
             </div>
           ) : (
