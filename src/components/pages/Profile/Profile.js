@@ -7,14 +7,14 @@ import { UserContext } from "../../../UserContext";
 
 const Profile = () => {
   const { data } = useContext(UserContext);
-  const [nome, setNome] = useState(data ? data.username : "");
+  const [nome, setNome] = useState(data ? data.name : "");
   const [img, setImg] = useState({});
   const [telefone, setTelefone] = useState("");
   const [cidade, setCidade] = useState("");
   const [sobre, setSobre] = useState("");
 
-  function handleSubmit(event) {
-    console.log(event);
+  async function handleSubmit(event) {
+    event.preventDefault();
   }
 
   function handleImgChange({ target }) {
