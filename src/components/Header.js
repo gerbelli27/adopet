@@ -2,7 +2,6 @@ import styles from "./Header.module.css";
 import iconHome from "../Assets/Casa.svg";
 import iconContact from "../Assets/Mensagens.svg";
 import patas from "../Assets/patas.svg";
-import UserAvatar from "../Assets/Usuario.png";
 import { Link } from "react-router-dom";
 import Logo from "../Assets/Logo.svg";
 import { useContext } from "react";
@@ -33,7 +32,7 @@ const Header = () => {
               <Link to="/login/perfil">
                 <div
                   className={styles.avatar}
-                  style={{ backgroundImage: `url('${data.url}')` }}
+                  style={{ backgroundImage: `url('${data.avatar}')` }}
                 ></div>
               </Link>
             </div>

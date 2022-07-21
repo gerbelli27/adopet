@@ -2,19 +2,30 @@ import styles from "./Profile.module.css";
 import Input from "../../../components/Forms/Input";
 import Button from "../../../components/Forms/Button";
 import { useState } from "react";
-import { useContext } from "react";
-import { UserContext } from "../../../UserContext";
+import { PROFILE_PHOTO } from "../../../api";
+import useFetch from "../../../Hooks/useFetch";
+import useForm from "../../../Hooks/useForm";
 
 const Profile = () => {
-  const { data } = useContext(UserContext);
-  const [nome, setNome] = useState(data ? data.name : "");
+  const { data, error, loading, request } = useFetch();
+  const nome = useForm();
+  const telefone = "";
+  const cidade = "";
+  const sobre = "";
   const [img, setImg] = useState({});
-  const [telefone, setTelefone] = useState("");
-  const [cidade, setCidade] = useState("");
-  const [sobre, setSobre] = useState("");
 
   async function handleSubmit(event) {
     event.preventDefault();
+    const formData = new FormData();
+    formData.append("img", img.raw);
+    formData.append("nome", nome.value);
+    formData.append("telefone", telefone.value);
+    formData.append("cidade", cidade.value);
+    formData.append("sobre", sobre.value);
+
+    const token = window.localStorage.getItem("token");
+    const { url, options } = PROFILE_PHOTO(formData, token);
+    request(url, options);
   }
 
   function handleImgChange({ target }) {
@@ -45,7 +56,7 @@ const Profile = () => {
               className={styles.picture}
               style={
                 data
-                  ? { backgroundImage: `url('${data.url}')` }
+                  ? { backgroundImage: `url('${data.avatar}')` }
                   : { backgroundColor: "#FFF" }
               }
             ></div>
@@ -69,8 +80,7 @@ const Profile = () => {
             type="text"
             name="name"
             style={{ background: "#FFFFFF", textAlign: "left" }}
-            onChange={(event) => setNome(event.target.value)}
-            value={nome}
+            {...nome}
           />
           <Input
             label="Telefone"
@@ -78,8 +88,7 @@ const Profile = () => {
             type="tel"
             name="phone"
             style={{ background: "#FFFFFF", textAlign: "left" }}
-            onChange={(event) => setTelefone(event.target.value)}
-            value={telefone}
+            {...telefone}
           />
           <Input
             label="Cidade"
@@ -87,8 +96,7 @@ const Profile = () => {
             type="text"
             name="cidade"
             style={{ background: "#FFFFFF", textAlign: "left" }}
-            onChange={(event) => setCidade(event.target.value)}
-            value={cidade}
+            {...cidade}
           />
           <label
             htmlFor="about"
@@ -101,8 +109,7 @@ const Profile = () => {
             name="about"
             cols="30"
             rows="10"
-            onChange={(event) => setSobre(event.target.value)}
-            value={sobre}
+            {...sobre}
           ></textarea>
           <Button>Salvar</Button>
         </form>
