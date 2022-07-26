@@ -15,7 +15,7 @@ const Profile = () => {
   const cidade = useForm();
   const [sobre, setSobre] = useState("");
   const { data } = useContext(UserContext);
-  const { loading, error, request } = useFetch();
+  const { request } = useFetch();
 
   async function handleSubmit(event) {
     event.preventDefault();
