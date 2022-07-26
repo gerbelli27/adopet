@@ -10,7 +10,7 @@ import { UserContext } from "../../../UserContext";
 import { USER_POST } from "../../../api";
 
 const Register = () => {
-  const username = useForm();
+  const name = useForm();
   const email = useForm("email");
   const password = useForm("password");
   const password2 = useForm("password");
@@ -23,12 +23,12 @@ const Register = () => {
     event.preventDefault();
     if (password.value === password2.value) {
       const { url, options } = USER_POST({
-        username: username.value,
+        name: name.value,
         email: email.value,
         password: password.value,
       });
       const { response } = await request(url, options);
-      if (response.ok) userLogin(username.value, password.value);
+      if (response.ok) userLogin(email.value, password.value);
     } else {
       setCheck(true);
     }
@@ -57,7 +57,7 @@ const Register = () => {
           type="text"
           name="name"
           placeholder="Digite seu nome completo"
-          {...username}
+          {...name}
         />
         <Input
           label="Senha"

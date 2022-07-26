@@ -4,22 +4,29 @@ import Button from "../../../components/Forms/Button";
 import { useState } from "react";
 import { useContext } from "react";
 import { UserContext } from "../../../UserContext";
-import { USER_POST } from "../../../api";
+import { USER_UPDATE } from "../../../api";
 import useFetch from "../../../Hooks/useFetch";
+import useForm from "../../../Hooks/useForm";
 
 const Profile = () => {
   const [img, setImg] = useState({});
+  const nome = useForm();
+  const telefone = useForm();
+  const cidade = useForm();
+  const [sobre, setSobre] = useState("");
   const { data } = useContext(UserContext);
-  const { request } = useFetch();
+  const { loading, error, request } = useFetch();
 
   async function handleSubmit(event) {
     event.preventDefault();
-    const { url, options } = USER_POST({
-      username: "username.value",
-      email: "email.value",
-      password: "password.value",
-    });
-    const { response } = await request(url, options);
+    const formData = new FormData();
+    formData.append("media_id", img.raw);
+    formData.append("name", nome.value);
+    formData.append("sobre", sobre);
+    formData.append("telefone", telefone.value);
+    formData.append("cidade", cidade.value);
+    const { url, options } = USER_UPDATE(formData);
+    request(url, options);
   }
 
   function handleImgChange({ target }) {
@@ -28,6 +35,10 @@ const Profile = () => {
       raw: target.files[0],
     });
   }
+
+  const handleSobre = (event) => {
+    setSobre(event.target.value);
+  };
 
   return (
     <section className={`${styles.profile} animeLeft`}>
@@ -74,6 +85,7 @@ const Profile = () => {
             type="text"
             name="name"
             style={{ background: "#FFFFFF", textAlign: "left" }}
+            {...nome}
           />
           <Input
             label="Telefone"
@@ -81,6 +93,7 @@ const Profile = () => {
             type="tel"
             name="phone"
             style={{ background: "#FFFFFF", textAlign: "left" }}
+            {...telefone}
           />
           <Input
             label="Cidade"
@@ -88,6 +101,7 @@ const Profile = () => {
             type="text"
             name="cidade"
             style={{ background: "#FFFFFF", textAlign: "left" }}
+            {...cidade}
           />
           <label
             htmlFor="about"
@@ -100,6 +114,8 @@ const Profile = () => {
             name="about"
             cols="30"
             rows="10"
+            value={sobre}
+            onChange={handleSobre}
           ></textarea>
           <Button>Salvar</Button>
         </form>
