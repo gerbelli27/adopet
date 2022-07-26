@@ -1,12 +1,12 @@
-import Input from "../../../components/Forms/Input";
-import Button from "../../../components/Forms/Button";
+import Input from "../../components/Forms/Input";
+import Button from "../../components/Forms/Button";
 import { Link } from "react-router-dom";
-import LogoBlue from "../../../Assets/Logoblue.svg";
+import LogoBlue from "../../Assets/Logoblue.svg";
 import styles from "./LoginForm.module.css";
 import { useContext } from "react";
-import { UserContext } from "../../../UserContext";
-import useForm from "../../../Hooks/useForm";
-import Error from "../../../components/Helper/Error";
+import { UserContext } from "../../UserContext";
+import useForm from "../../Hooks/useForm";
+import Error from "../../components/Helper/Error";
 
 const LoginForm = () => {
   const username = useForm();

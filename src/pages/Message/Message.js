@@ -1,6 +1,6 @@
 import styles from "./Message.module.css";
-import Input from "../../../components/Forms/Input";
-import Button from "../../../components/Forms/Button";
+import Input from "../../components/Forms/Input";
+import Button from "../../components/Forms/Button";
 
 const Message = () => {
   function handleSubmit(event) {

@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
-import NotFound from "../../../components/NotFound";
+import NotFound from "../../components/NotFound";
 import { useContext } from "react";
-import { UserContext } from "../../../UserContext";
+import { UserContext } from "../../UserContext";
 import styles from "./Login.module.css";
 
 const Login = () => {

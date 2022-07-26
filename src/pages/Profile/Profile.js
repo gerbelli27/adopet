@@ -1,12 +1,12 @@
 import styles from "./Profile.module.css";
-import Input from "../../../components/Forms/Input";
-import Button from "../../../components/Forms/Button";
+import Input from "../../components/Forms/Input";
+import Button from "../../components/Forms/Button";
 import { useState } from "react";
 import { useContext } from "react";
-import { UserContext } from "../../../UserContext";
-import { USER_UPDATE } from "../../../api";
-import useFetch from "../../../Hooks/useFetch";
-import useForm from "../../../Hooks/useForm";
+import { UserContext } from "../../UserContext";
+import { USER_UPDATE } from "../../api";
+import useFetch from "../../Hooks/useFetch";
+import useForm from "../../Hooks/useForm";
 
 const Profile = () => {
   const [img, setImg] = useState({});

@@ -2,12 +2,12 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./components/pages/Home/Home";
-import Login from "./components/pages/Login/Login";
-import Register from "./components/pages/Register/Register";
-import Message from "./components/pages/Message/Message";
-import Feed from "./components/pages/Feed/Feed";
-import Profile from "./components/pages/Profile/Profile";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
+import Message from "./pages/Message/Message";
+import Feed from "./pages/Feed/Feed";
+import Profile from "./pages/Profile/Profile";
 import "./App.css";
 
 function App() {

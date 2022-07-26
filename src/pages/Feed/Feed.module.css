@@ -84,7 +84,7 @@
 
 .contact::before {
   content: " ";
-  background: url("../../../Assets/mensagem.png");
+  background: url("../../Assets/mensagem.png");
   width: 1.125rem;
   height: 1.125rem;
   display: inline-block;
@@ -113,7 +113,7 @@
 @media (min-width: 1440px) {
   .feed {
     margin-top: 4rem;
-    background: url("../../../Assets/Forma2.svg");
+    background: url("../../Assets/Forma2.svg");
     background-repeat: no-repeat;
     background-size: 134px;
     background-position: right top;

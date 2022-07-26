@@ -1,13 +1,13 @@
 import styles from "./Register.module.css";
-import Input from "../../../components/Forms/Input";
-import Button from "../../../components/Forms/Button";
-import LogoBlue from "../../../Assets/Logoblue.svg";
-import Error from "../../../components/Helper/Error";
-import useForm from "../../../Hooks/useForm";
+import Input from "../../components/Forms/Input";
+import Button from "../../components/Forms/Button";
+import LogoBlue from "../../Assets/Logoblue.svg";
+import Error from "../../components/Helper/Error";
+import useForm from "../../Hooks/useForm";
 import { useContext, useState } from "react";
-import useFetch from "../../../Hooks/useFetch";
-import { UserContext } from "../../../UserContext";
-import { USER_POST } from "../../../api";
+import useFetch from "../../Hooks/useFetch";
+import { UserContext } from "../../UserContext";
+import { USER_POST } from "../../api";
 
 const Register = () => {
   const name = useForm();
