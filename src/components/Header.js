@@ -13,9 +13,9 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <Link to="/" className={styles.logo}>
-        <img src={Logo} alt="Logo" />
+        <img src={Logo} alt="Logo Ir para Homepage" />
       </Link>
-      <Link to="/login/lista" className={styles.link}>
+      <Link to="/" className={styles.link}>
         <img src={iconHome} alt="Ir para Homepage" />
       </Link>
       <Link to="/login/mensagem" className={styles.link}>

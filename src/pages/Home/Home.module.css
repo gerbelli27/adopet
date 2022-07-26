@@ -28,6 +28,7 @@
 .logo {
   display: inline-block;
   width: 186px;
+  height: 64px;
 }
 
 .ilustrationHome {
@@ -48,6 +49,7 @@
   }
   .logo {
     width: 251px;
+    height: 62px;
   }
   .ilustrationHome {
     width: 338px;
@@ -62,6 +64,11 @@
 @media (min-width: 1440px) {
   .home {
     margin-top: 0;
+  }
+
+  .logo {
+    width: 186px;
+    height: 46px;
   }
 
   .ilustrationHome {

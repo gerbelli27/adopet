@@ -6,25 +6,24 @@ import { useContext } from "react";
 import { UserContext } from "../../UserContext";
 import { USER_UPDATE } from "../../api";
 import useFetch from "../../Hooks/useFetch";
-import useForm from "../../Hooks/useForm";
 
 const Profile = () => {
-  const [img, setImg] = useState({});
-  const nome = useForm();
-  const telefone = useForm();
-  const cidade = useForm();
-  const [sobre, setSobre] = useState("");
   const { data } = useContext(UserContext);
   const { request } = useFetch();
+  const [img, setImg] = useState({});
+  const [nome, setNome] = useState(data.nome || "");
+  const [telefone, setTelefone] = useState(data.telefone || "");
+  const [cidade, setCidade] = useState(data.cidade || "");
+  const [sobre, setSobre] = useState(data.sobre || "");
 
   async function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData();
     formData.append("media_id", img.raw);
-    formData.append("name", nome.value);
+    formData.append("name", nome);
     formData.append("sobre", sobre);
-    formData.append("telefone", telefone.value);
-    formData.append("cidade", cidade.value);
+    formData.append("telefone", telefone);
+    formData.append("cidade", cidade);
     const { url, options } = USER_UPDATE(formData);
     request(url, options);
   }
@@ -35,10 +34,6 @@ const Profile = () => {
       raw: target.files[0],
     });
   }
-
-  const handleSobre = (event) => {
-    setSobre(event.target.value);
-  };
 
   return (
     <section className={`${styles.profile} animeLeft`}>
@@ -85,7 +80,8 @@ const Profile = () => {
             type="text"
             name="name"
             style={{ background: "#FFFFFF", textAlign: "left" }}
-            {...nome}
+            value={nome}
+            onChange={(event) => setNome(event.target.value)}
           />
           <Input
             label="Telefone"
@@ -93,7 +89,8 @@ const Profile = () => {
             type="tel"
             name="phone"
             style={{ background: "#FFFFFF", textAlign: "left" }}
-            {...telefone}
+            value={telefone}
+            onChange={(event) => setTelefone(event.target.value)}
           />
           <Input
             label="Cidade"
@@ -101,7 +98,8 @@ const Profile = () => {
             type="text"
             name="cidade"
             style={{ background: "#FFFFFF", textAlign: "left" }}
-            {...cidade}
+            value={cidade}
+            onChange={(event) => setCidade(event.target.value)}
           />
           <label
             htmlFor="about"
@@ -115,7 +113,7 @@ const Profile = () => {
             cols="30"
             rows="10"
             value={sobre}
-            onChange={handleSobre}
+            onChange={(event) => setSobre(event.target.value)}
           ></textarea>
           <Button>Salvar</Button>
         </form>
