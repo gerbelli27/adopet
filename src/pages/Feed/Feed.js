@@ -1,30 +1,37 @@
 import styles from "./Feed.module.css";
-import { Link } from "react-router-dom";
+import { PHOTOS_GET } from "../../api";
+import useFetch from "../../Hooks/useFetch";
+import { useEffect } from "react";
+import Error from "../../components/Helper/Error";
+import FeedItem from "./FeedItem";
 
-const Home = () => {
-  return (
-    <section className={`${styles.feed} animeLeft`}>
-      <h1 className={styles.subtitle}>
-        Olá! Veja os amigos disponíveis para adoção!
-      </h1>
-      <ul className={styles.cardslist}>
-        <li>
-          <div className={styles.card}>
-            {/* <img src={image} alt="Foto animal" /> */}
-            <div className={styles.description}>
-              <p className={styles.name}>Dunga</p>
-              <p className={styles.data}>2 anos</p>
-              <p className={styles.data}>Porte pequeno</p>
-              <p className={styles.data}>calmo e educado</p>
-              <p className={styles.city}>Rio de janeiro (RJ)</p>
-              <Link to="/" className={styles.contact}>
-                Falar com responsável
-              </Link>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </section>
-  );
+const Feed = () => {
+  const { data, request, error, loading } = useFetch();
+
+  useEffect(() => {
+    async function fetchPhotos() {
+      const total = 9;
+      const { url, options } = PHOTOS_GET({ page: 1, total, user: 0 });
+      const { response, json } = await request(url, options);
+    }
+    fetchPhotos();
+  }, [request]);
+
+  if (error) return <Error error={error} />;
+  if (loading) return <section className={styles.feed1}></section>;
+  if (data)
+    return (
+      <section className={`${styles.feed} animeLeft`}>
+        <h1 className={styles.subtitle}>
+          Olá! Veja os amigos disponíveis para adoção!
+        </h1>
+        <ul className={styles.cardslist}>
+          {data.map((card) => (
+            <FeedItem key={card.id} card={card} />
+          ))}
+        </ul>
+      </section>
+    );
+  else return null;
 };
-export default Home;
+export default Feed;

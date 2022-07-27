@@ -1,4 +1,4 @@
-export const API_URL = "http://adopetapi.test/wp-json";
+export const API_URL = "https://adopet.x10.mx/wp/json";
 
 export function TOKEN_POST(body) {
   return {
@@ -63,13 +63,13 @@ export function USER_UPDATE(formData) {
   };
 }
 
-export function PHOTO_POST(formData, token) {
+export function PHOTO_POST(formData) {
   return {
     url: API_URL + "/api/photo",
     options: {
       method: "POST",
       headers: {
-        Authorization: "Bearer " + token,
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
       },
       body: formData,
     },

@@ -6,6 +6,11 @@
   text-align: center;
   width: 100%;
   margin-bottom: 6.25rem;
+  min-height: 100vh;
+}
+
+.feed1 {
+  min-height: 100vh;
 }
 
 .title {
@@ -33,62 +38,6 @@
   align-items: center;
   gap: 1rem;
   width: 100%;
-}
-
-.card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: #f6f6f6;
-  min-height: 12.1rem;
-  min-width: 21.5rem;
-  max-width: 360px;
-  padding: 1rem;
-  gap: 1rem;
-}
-
-.description {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.name {
-  font-size: 1rem;
-  color: #3772ff;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.data {
-  font-size: 0.875rem;
-  color: #737380;
-  font-weight: 400;
-}
-
-.city {
-  margin-top: 1.875rem;
-  font-size: 0.875rem;
-  color: #737380;
-  font-weight: 400;
-}
-
-.contact {
-  font-size: 0.625rem;
-  color: #737380;
-  font-weight: 400;
-  font-style: none;
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-}
-
-.contact::before {
-  content: " ";
-  background: url("../../Assets/mensagem.png");
-  width: 1.125rem;
-  height: 1.125rem;
-  display: inline-block;
-  margin-right: 5px;
 }
 
 @media (min-width: 768px) {

@@ -6,10 +6,13 @@ import { useContext } from "react";
 import { UserContext } from "../../UserContext";
 import { USER_UPDATE } from "../../api";
 import useFetch from "../../Hooks/useFetch";
+import Error from "../../components/Helper/Error";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
-  const { data } = useContext(UserContext);
+  const { data, error } = useContext(UserContext);
   const { request } = useFetch();
+  const [loading, setLoading] = useState(false);
   const [img, setImg] = useState({});
   const [nome, setNome] = useState(data.nome || "");
   const [telefone, setTelefone] = useState(data.telefone || "");
@@ -18,6 +21,7 @@ const Profile = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    setLoading(true);
     const formData = new FormData();
     formData.append("media_id", img.raw);
     formData.append("name", nome);
@@ -115,7 +119,15 @@ const Profile = () => {
             value={sobre}
             onChange={(event) => setSobre(event.target.value)}
           ></textarea>
-          <Button>Salvar</Button>
+          {loading ? (
+            <Button disabled>Salvando...</Button>
+          ) : (
+            <Button>Salvar</Button>
+          )}
+          <Error error={error} />
+          <Link to="/login/animal" className={styles.link}>
+            Cadastrar Animal
+          </Link>
         </form>
       </div>
     </section>

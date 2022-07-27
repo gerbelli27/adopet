@@ -8,6 +8,7 @@ import { useContext, useState } from "react";
 import useFetch from "../../Hooks/useFetch";
 import { UserContext } from "../../UserContext";
 import { USER_POST } from "../../api";
+import { Navigate } from "react-router-dom";
 
 const Register = () => {
   const name = useForm();
@@ -16,7 +17,7 @@ const Register = () => {
   const password2 = useForm("password");
   const [check, setCheck] = useState(false);
 
-  const { userLogin } = useContext(UserContext);
+  const { userLogin, login } = useContext(UserContext);
   const { loading, error, request } = useFetch();
 
   async function handleSubmit(event) {
@@ -33,7 +34,7 @@ const Register = () => {
       setCheck(true);
     }
   }
-
+  if (login === true) return <Navigate to="/login/lista" />;
   return (
     <section className={`${styles.register} animeLeft`}>
       <img className={styles.logoblue} src={LogoBlue} alt="Logo Adopet" />

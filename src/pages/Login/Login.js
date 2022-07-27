@@ -13,8 +13,6 @@ const Login = () => {
     <section className={`${styles.login} animeLeft`}>
       <Routes>
         <Route path="/" element={<LoginForm />} />
-        {/* <Route path="lost" element={<LoginPasswordLost />} /> */}
-        {/* <Route path="reset" element={<LoginPasswordReset />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </section>

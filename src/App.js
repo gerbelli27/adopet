@@ -9,6 +9,7 @@ import Message from "./pages/Message/Message";
 import Feed from "./pages/Feed/Feed";
 import Profile from "./pages/Profile/Profile";
 import "./App.css";
+import NewAnimal from "./pages/Profile/NewAnimal";
 
 function App() {
   const [styles, setStyles] = useState(false);
@@ -37,6 +38,7 @@ function App() {
         <Route path="/cadastro" element={<Register />} />
         <Route path="/login/mensagem" element={<Message />} />
         <Route path="/login/perfil" element={<Profile />} />
+        <Route path="/login/animal" element={<NewAnimal />} />
       </Routes>
       <Footer />
     </div>
