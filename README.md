@@ -5,7 +5,6 @@
 =======
 ![Design preview for the Adopet Alura Challenge Front-end](./public/images/screenshot.jpg)
 
->>>>>>> 6c947006021fcfa3781c4ca00acf66423791c6bd
 This is a solution to the [Adopet Alura Challenge Front-end](https://www.alura.com.br/)
 
 ## Table of contents
