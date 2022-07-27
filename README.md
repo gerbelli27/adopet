@@ -1,4 +1,4 @@
-# Frontend Mentor - IP address tracker
+# Adopet - Alura Challenge
 
 ![Design preview for the Adopet Alura Challenge Front-end](./public/images/screenshot.jpg)
 
