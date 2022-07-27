@@ -1,4 +1,5 @@
 export const API_URL = "https://adopet.x10.mx/wp/json";
+// http://adopetapi.test/wp-json - local server
 
 export function TOKEN_POST(body) {
   return {
