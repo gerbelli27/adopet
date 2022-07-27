@@ -9,10 +9,19 @@
   margin-bottom: 2.265rem;
 }
 
+.logoblue {
+  display: block;
+  width: 143px;
+}
+
 @media (min-width: 768px) {
   .subtitle {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
+  }
+
+  .logoblue {
+    width: 259px;
   }
 }
 

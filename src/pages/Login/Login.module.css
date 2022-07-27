@@ -26,11 +26,6 @@
   margin-bottom: 2.265rem;
 }
 
-.logoblue {
-  display: block;
-  width: 143px;
-}
-
 .login a {
   font-size: 0.8rem;
   text-decoration-line: underline;
@@ -43,10 +38,6 @@
   .login {
     margin-top: 6rem;
     min-height: 100vh;
-  }
-
-  .logoblue {
-    width: 259px;
   }
 
   .subtitle {
