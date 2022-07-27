@@ -2,9 +2,6 @@
 
 ![Design preview for the Adopet Alura Challenge Front-end](./public/images/screenshot.jpg)
 
-=======
-![Design preview for the Adopet Alura Challenge Front-end](./public/images/screenshot.jpg)
-
 This is a solution to the [Adopet Alura Challenge Front-end](https://www.alura.com.br/)
 
 ## Table of contents
