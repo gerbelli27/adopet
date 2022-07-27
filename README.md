@@ -62,10 +62,4 @@ https://www.origamid.com |
 ## Author
 
 - Website - [Eduardo Gerbelli](https://www.linkedin.com/in/eduardogerbelli/)
-<<<<<<< HEAD
 - Github - [gerbelli27](https://github.com/gerbelli27)
-=======
-
-
-=======
-- # Github - [gerbelli27](https://github.com/gerbelli27)
