@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Frontend Mentor - IP address tracker
 
 ![Design preview for the Adopet Alura Challenge Front-end](./public/images/screenshot.jpg)
@@ -69,7 +67,6 @@ https://www.origamid.com |
 - Github - [gerbelli27](https://github.com/gerbelli27)
 =======
 
->>>>>>> 03a4fe892d7b990ccd793edfcdc4461a98cee6cf
+
 =======
 - # Github - [gerbelli27](https://github.com/gerbelli27)
->>>>>>> 6c947006021fcfa3781c4ca00acf66423791c6bd
