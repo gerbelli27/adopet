@@ -22,7 +22,6 @@ const Header = () => {
         <img src={iconContact} alt="Ir para mensagens" />
       </Link>
       <div className={styles.user}></div>
-
       {location === "/" ? (
         <div></div>
       ) : (
@@ -37,7 +36,7 @@ const Header = () => {
               </Link>
             </div>
           ) : (
-            <div className={`${styles.patas} anime`}>
+            <div className={`${styles.patas} animeLeft`}>
               <img src={patas} alt="Ilustracao Patas" />
             </div>
           )}

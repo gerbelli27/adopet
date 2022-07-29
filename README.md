@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/gerbelli27/adopet)
-- Live Site URL: [Add live site URL here](http://adopet.x10.mx/)
+- Solution URL: [GitHub](https://github.com/gerbelli27/adopet)
+- Live Site URL: [GitHub Pages](http://adopet.x10.mx/)
 
 ## My process
 
