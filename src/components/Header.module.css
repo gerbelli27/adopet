@@ -30,12 +30,6 @@
   border-radius: 50%;
   background: url("../Assets/avatar.svg");
   background-size: cover;
-  outline: 1px solid #36d6ad;
-}
-
-.avatar:hover {
-  outline: 4px solid #36d6ad;
-  transition: 0.2s;
 }
 
 @keyframes animeRight {
