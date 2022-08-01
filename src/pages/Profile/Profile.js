@@ -1,13 +1,13 @@
 import styles from "./Profile.module.css";
 import Input from "../../components/Forms/Input";
 import Button from "../../components/Forms/Button";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useContext } from "react";
 import { UserContext } from "../../UserContext";
 import { USER_UPDATE } from "../../api";
 import useFetch from "../../Hooks/useFetch";
 import Error from "../../components/Helper/Error";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   const { data, error } = useContext(UserContext);
