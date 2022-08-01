@@ -1,13 +1,13 @@
 import styles from "./Profile.module.css";
 import Input from "../../components/Forms/Input";
 import Button from "../../components/Forms/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { UserContext } from "../../UserContext";
 import { USER_UPDATE } from "../../api";
 import useFetch from "../../Hooks/useFetch";
 import Error from "../../components/Helper/Error";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const { data, error } = useContext(UserContext);
@@ -18,6 +18,7 @@ const Profile = () => {
   const [telefone, setTelefone] = useState("");
   const [cidade, setCidade] = useState("");
   const [sobre, setSobre] = useState("");
+  const navigate = useNavigate();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -30,6 +31,7 @@ const Profile = () => {
     formData.append("cidade", cidade);
     const { url, options } = USER_UPDATE(formData);
     request(url, options);
+    navigate("/login");
   }
 
   function handleImgChange({ target }) {
