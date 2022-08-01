@@ -14,10 +14,10 @@ const Profile = () => {
   const { request } = useFetch();
   const [loading, setLoading] = useState(false);
   const [img, setImg] = useState({});
-  const [nome, setNome] = useState(data.nome || "");
-  const [telefone, setTelefone] = useState(data.telefone || "");
-  const [cidade, setCidade] = useState(data.cidade || "");
-  const [sobre, setSobre] = useState(data.sobre || "");
+  const [nome, setNome] = useState("");
+  const [telefone, setTelefone] = useState("");
+  const [cidade, setCidade] = useState("");
+  const [sobre, setSobre] = useState("");
 
   async function handleSubmit(event) {
     event.preventDefault();
