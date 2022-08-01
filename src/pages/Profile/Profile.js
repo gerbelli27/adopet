@@ -18,7 +18,6 @@ const Profile = () => {
   const [telefone, setTelefone] = useState("");
   const [cidade, setCidade] = useState("");
   const [sobre, setSobre] = useState("");
-  const navigate = useNavigate();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -31,7 +30,6 @@ const Profile = () => {
     formData.append("cidade", cidade);
     const { url, options } = USER_UPDATE(formData);
     request(url, options);
-    navigate("/login");
   }
 
   function handleImgChange({ target }) {
