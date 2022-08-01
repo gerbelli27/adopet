@@ -14,6 +14,18 @@
   width: 143px;
 }
 
+.pwdShow {
+  position: relative;
+  top: -45px;
+  right: -140px;
+  height: 18px;
+  width: 20px;
+  background: url("../../Assets/eye.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
 @media (min-width: 768px) {
   .subtitle {
     margin-top: 2.5rem;
@@ -23,11 +35,19 @@
   .logoblue {
     width: 259px;
   }
+
+  .pwdShow {
+    right: -210px;
+  }
 }
 
 @media (min-width: 1440px) {
   .subtitle {
     margin-top: 4.5rem;
     margin-bottom: 4.5rem;
+  }
+
+  .pwdShow {
+    right: -155px;
   }
 }

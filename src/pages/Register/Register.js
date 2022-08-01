@@ -16,9 +16,14 @@ const Register = () => {
   const password = useForm("password");
   const password2 = useForm("password");
   const [check, setCheck] = useState(false);
-
   const { userLogin, login } = useContext(UserContext);
   const { loading, error, request } = useFetch();
+  const [type, setType] = useState("password");
+
+  async function handlePassword() {
+    if (type === "password") setType("text");
+    else setType("password");
+  }
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -62,20 +67,22 @@ const Register = () => {
         />
         <Input
           label="Senha"
-          id="pwd"
-          type="password"
+          id="password"
+          type={type}
           name="password"
           placeholder="Crie uma senha"
           {...password}
         />
+        <i className={styles.pwdShow} onClick={handlePassword}></i>
         <Input
           label="Confirme sua senha"
-          id="pwd2"
-          type="password"
+          id="password-confirm"
+          type={type}
           name="password"
           placeholder="Repita a senha criada acima"
           {...password2}
         />
+        <i className={styles.pwdShow} onClick={handlePassword}></i>
         {loading ? (
           <Button disabled>Cadastrando...</Button>
         ) : (

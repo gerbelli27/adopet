@@ -25,13 +25,6 @@
   box-shadow: 0 0 0 3px #d2d2f1;
 }
 
-.input[name="password"],
-.input[name="confirme"] {
-  background-image: url("../../Assets/eye.svg");
-  background-repeat: no-repeat;
-  background-position: 95%;
-}
-
 .label {
   display: inline-block;
   font-size: 1rem;

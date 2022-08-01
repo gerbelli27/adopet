@@ -3,7 +3,7 @@ import Button from "../../components/Forms/Button";
 import { Link } from "react-router-dom";
 import LogoBlue from "../../Assets/Logoblue.svg";
 import styles from "./LoginForm.module.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../UserContext";
 import useForm from "../../Hooks/useForm";
 import Error from "../../components/Helper/Error";
@@ -11,6 +11,7 @@ import Error from "../../components/Helper/Error";
 const LoginForm = () => {
   const username = useForm();
   const password = useForm();
+  const [type, setType] = useState("password");
 
   const { userLogin, error, loading } = useContext(UserContext);
 
@@ -19,6 +20,11 @@ const LoginForm = () => {
     if (username.validate() && password.validate()) {
       userLogin(username.value, password.value);
     }
+  }
+
+  async function handlePassword() {
+    if (type === "password") setType("text");
+    else setType("password");
   }
 
   return (
@@ -36,11 +42,12 @@ const LoginForm = () => {
         <Input
           label="Senha"
           id="pwd"
-          type="password"
+          type={type}
           name="password"
           placeholder="Insira sua senha"
           {...password}
         />
+        <i className={styles.pwdShow} onClick={handlePassword}></i>
         {loading ? (
           <Button disabled>Entrando...</Button>
         ) : (
