@@ -55,10 +55,10 @@ input[id="media_id"] {
 
 label[for="media_id"] {
   position: relative;
-  top: -85px;
+  top: -95px;
   display: block;
   align-self: center;
-  padding-top: 85px;
+  padding-top: 95px;
   margin-bottom: -70px;
   cursor: pointer;
 }

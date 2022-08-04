@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export const UserContext = createContext();
 
 export const UserStorage = ({ children }) => {
-  const [data, setData] = useState(null);
+  const [user, setUser] = useState(null);
   const [login, setLogin] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -15,7 +15,7 @@ export const UserStorage = ({ children }) => {
     const { url, options } = USER_GET(token);
     const response = await fetch(url, options);
     const json = await response.json();
-    setData(json);
+    setUser(json);
     setLogin(true);
   }
 
@@ -40,7 +40,7 @@ export const UserStorage = ({ children }) => {
 
   const userLogout = useCallback(
     async function () {
-      setData(null);
+      setUser(null);
       setError(false);
       setLoading(false);
       setLogin(false);
@@ -75,7 +75,7 @@ export const UserStorage = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ userLogin, userLogout, data, error, loading, login }}
+      value={{ userLogin, userLogout, user, error, loading, login }}
     >
       {children}
     </UserContext.Provider>

@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { UserContext } from "../UserContext";
 
 const Header = () => {
-  const { data } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const location = window.location.pathname;
 
   return (
@@ -27,12 +27,12 @@ const Header = () => {
         <div></div>
       ) : (
         <div>
-          {data ? (
+          {user ? (
             <div className={styles.user}>
               <Link to="/login/perfil">
                 <div
                   className={styles.avatar}
-                  style={{ backgroundImage: `url('${data.avatar}')` }}
+                  style={{ backgroundImage: `url('${user.avatar}')` }}
                 ></div>
               </Link>
             </div>
